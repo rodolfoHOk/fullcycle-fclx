@@ -85,4 +85,4 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 ### Go
 
 - Iniciando projeto go: go mod init github.com/rodolfoHOk/fullcycle.fclx/chatservice
--
+- Adicionando e baixando dependências: go mod tidy
