@@ -20,6 +20,7 @@
 ### Dinâmica do projeto
 
 OpenAI <- Chat (microsserviço) <-[gRPC]-- Next.js (BFF) <- Next.js (Frontend)
+
 OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 
 ### OpenAI API e ChatGPT
@@ -86,3 +87,23 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 
 - Iniciando projeto go: go mod init github.com/rodolfoHOk/fullcycle.fclx/chatservice
 - Adicionando e baixando dependências: go mod tidy
+
+## 2.o Dia - Comunicação entre microsserviços do ChatGPT na prática
+
+### SqlC
+
+- link: https://sqlc.dev/
+
+- install: go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+
+- create migrations functions: sqlc generate
+
+### GoLang Migrate
+
+- link: https://github.com/golang-migrate/migrate
+
+- link CLI: https://github.com/golang-migrate/migrate/tree/master/cmd/migrate
+
+- install CLI: go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+- create migrations: migrate create -ext=mysql -dir=sql/migrations -seq init
