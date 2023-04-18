@@ -106,4 +106,29 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 
 - install CLI: go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 
-- create migrations: migrate create -ext=mysql -dir=sql/migrations -seq init
+- create migration: migrate create -ext=mysql -dir=sql/migrations -seq init
+
+- migrate: migrate -path=sql/migrations -database "mysql://root:root@tcp(localhost:3306)/chat_dev" -verbose up
+
+- migrate down: migrate -path=sql/migrations -database "mysql://root:root@tcp(localhost:3306)/chat_dev" -verbose drop
+
+### gRPC
+
+- link: https://grpc.io/
+
+- link: https://protobuf.dev/overview/
+
+- install: https://grpc.io/docs/protoc-installation/
+
+- download: https://github.com/protocolbuffers/protobuf/releases/download/v22.3/protoc-22.3-linux-x86_64.zip
+
+- extract: unzip protoc-22.3-linux-x86_64.zip -d ~/.local
+
+- path env: export PATH="$PATH:$HOME/.local/bin"
+
+- install go plugins:
+
+  - go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+  - go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+- generate: protoc --go_out=. --go-grpc_out=. proto/chat.proto
