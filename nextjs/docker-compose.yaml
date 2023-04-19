@@ -10,10 +10,12 @@ services:
     # extra_hosts:
     #   - "host.docker.internal:172.17.0.1"
 
-  # db:
-  #   image: mysql:8
-  #   environment:
-  #     - MYSQL_ROOT_PASSWORD=root
-  #     - MYSQL_DATABASE=chat_bff
-  #   volumes:
-  #     - .docker/dbdata:/var/lib/mysql
+  db:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=chat_bff
+    ports:
+      - 3306:3306 
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
