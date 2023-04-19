@@ -171,3 +171,17 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 - create migration: npx prisma migrate dev
 
 - update prisma types: npx prisma generate
+
+### gRPC
+
+![gRPC e Stream](images/grpc-stream.png)
+
+- install: npm install @grpc/grpc-js @grpc/proto-loader
+
+- generate types:
+
+        proto-loader-gen-types --longs=String --enums=String --defaults --oneofs --grpcLib=@grpc/grpc-js --outDir=./src/grpc/rpc ./proto/*.proto
+
+### Server Sent Events
+
+![Server sent events](images/server-sent-events.png)
