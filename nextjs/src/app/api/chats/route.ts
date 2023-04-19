@@ -8,14 +8,14 @@ export async function POST(request: NextRequest) {
     data: {
       messages: {
         create: {
-          content: body.message
-        }
-      }
+          content: body.message,
+        },
+      },
     },
     select: {
       id: true,
-      messages: true
-    }
+      messages: true,
+    },
   });
 
   return NextResponse.json(chatCreated);
@@ -27,14 +27,14 @@ export async function GET(request: NextRequest) {
       id: true,
       messages: {
         orderBy: {
-          created_at: 'asc'
+          created_at: 'asc',
         },
-        take: 1
-      }
+        take: 1,
+      },
     },
     orderBy: {
-      created_at: 'desc'
-    }
+      created_at: 'desc',
+    },
   });
 
   return NextResponse.json(chats);

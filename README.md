@@ -132,3 +132,42 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
   - go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 
 - generate: protoc --go_out=. --go-grpc_out=. proto/chat.proto
+
+## 3.o Dia - Backend for Frontend com Next.js
+
+![Arquitetura do projeto](/images/project-archtecture.png)
+
+![Arquitetura do projeto aprofundada](/images/project-archtecture2.png)
+
+### Tecnologias
+
+- React.js
+- Next.js
+- Prisma ORM
+- MySQL
+- Rest
+- Server sent events
+- gRPC
+- Tailwind CSS
+- Docker
+
+### Rotas
+
+- POST /api/chats -> Iniciar um chat
+- GET /api/chats -> Listar os chats
+- POST /api/chats/:ID/messages -> Publicar nova mensagem em um chat
+- GET /api/chats/:ID/messages -> Listar mensagem de um chat
+
+### Next.js
+
+![Server side rendering](images/server-side-rendering.png)
+
+### Prisma
+
+- install: npm install @prisma/client
+
+- init: npx prisma init
+
+- create migration: npx prisma migrate dev
+
+- update prisma types: npx prisma generate
