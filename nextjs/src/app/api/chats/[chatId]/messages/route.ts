@@ -10,7 +10,7 @@ export async function GET(
       chat_id: params.chatId,
     },
     orderBy: {
-      created_at: 'desc',
+      created_at: 'asc',
     },
   });
 

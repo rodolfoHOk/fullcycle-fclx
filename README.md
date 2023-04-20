@@ -185,3 +185,45 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 ### Server Sent Events
 
 ![Server sent events](images/server-sent-events.png)
+
+## 4.o Dia - Frontend do ChatGPT com Next.js e React
+
+### Tecnologias
+
+- React.js
+- Next.js
+- React Server Components
+- Rest
+- Server sent events
+- Tailwind CSS
+
+### Check List
+
+- Criar layout da aplicação
+- Integração com o endpoints do BFF
+- Criar o server side events para receber os pedaços de uma resposta
+- Estilizar com Tailwind CSS
+
+### React Server Components
+
+![React Server Components](images/react-server-components.png)
+
+1. Problemas do SSR padrão
+
+- O servidor precisa regerar sempre toda a página
+- Se precisar de reprocessamento da página, precisa regerá-la inteira no servidor
+- Libs como formatação de datas ficam no bundle js do client
+- Problemas de flexibilidade e otimização de carregamento das páginas e start do projeto
+
+2. Benefícios do React Server Components
+
+- Bundle javascript menor
+- Carregamento inicial mais rápido
+- Cache em nível de components
+- Chamadas externas em paralelo (Suspense)
+
+### Tailwind CSS
+
+- link: https://tailwindcss.com/
+- install: https://tailwindcss.com/docs/installation/using-postcss
+- Utility-First Fundamentals Concepts
