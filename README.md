@@ -227,3 +227,5 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 - link: https://tailwindcss.com/
 - install: https://tailwindcss.com/docs/installation/using-postcss
 - Utility-First Fundamentals Concepts
+
+## 5.o Dia -
