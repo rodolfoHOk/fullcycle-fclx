@@ -1,8 +1,11 @@
 GET http://localhost:3000/api/hello
 
+@token = eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..aKHiZFNF8fOWD4cy.4QXfakkemfw6zX2b2iBKB2IGmqfgse6LLrinrbuL2DKtfXeVVtrn8h_BLZrzwYImW76JWST1oJPebllAXWBkkWjMIcfIciwgQNFbIKnr4DRaTA6X_cKXBV0Fd430LUvW0-tjCy63M0Wi3iClM7ERlRksnbwO-irYD4Z7qNNOnzCQvYNvA6jNJcBM9tM.EOJtt1iacHF6g_CnXzfXRw
+
 ###
 POST http://localhost:3000/api/chats
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "message": "Hello World"
@@ -10,14 +13,17 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/chats
+Authorization: Bearer {{token}}
 
 ###
-@chatId = 83866158-a282-4266-a6d4-85197c171fd2
+@chatId = 39f09188-5377-4721-a377-a111c9d05873
 GET http://localhost:3000/api/chats/{{chatId}}/messages
+Authorization: Bearer {{token}}
 
 ### 
 POST http://localhost:3000/api/chats/{{chatId}}/messages
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "message": "Estou testando a API"
@@ -26,3 +32,12 @@ Content-Type: application/json
 ###
 @messageId = 40a04ab3-b2a9-4bfc-95e7-aada22d56a2c
 GET http://localhost:3000/api/messages/{{messageId}}/events
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:3000/api/generate-token
+Content-Type: application/json
+
+{
+
+}

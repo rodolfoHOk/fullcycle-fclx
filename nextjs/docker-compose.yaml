@@ -19,3 +19,12 @@ services:
       - 3307:3306
     volumes:
       - .docker/dbdata:/var/lib/mysql
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.0
+    command: start-dev
+    ports:
+      - 9000:8080
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin

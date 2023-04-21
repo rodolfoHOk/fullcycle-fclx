@@ -228,4 +228,58 @@ OpenAI <- Chat (microsserviço) <-[HTTP]-- Twilio <- WhatsApp
 - install: https://tailwindcss.com/docs/installation/using-postcss
 - Utility-First Fundamentals Concepts
 
-## 5.o Dia -
+## 5.o Dia - KeyCloak: Integrando servidor de identidade
+
+### Tecnologias
+
+- Next.js
+- React.js
+- React Server Components
+- React Client Components
+- Keycloak
+- NextAuth
+- Docker
+
+### Check List
+
+- Instalar e configurar o Keycloak
+- Criar um usuário no Keycloak
+- Criar um client confidential no Keycloak
+- Integrar o Keycloak com Next.js
+- Adicionar um campo user_id no chat
+
+### Open ID Connect
+
+![OpenID Conect](images/openid-connect.png)
+
+### Keycloak
+
+1.  Criar usuário
+
+        Acessar: http://localhost:9000
+        Clicar: Administration console
+        Logar: Username / Password -> Sign In
+        Clicar menu: Users
+        Clicar: Add user
+        Preencher: Username / First name / Last name -> Create
+        Clicar aba: Credentials
+        Clicar: Set password
+        Preencher: Password / Password confirmation / Temporary (off) -> Save
+        Clicar: Save password
+
+2.  Criar client
+
+        Acessar: http://localhost:9000
+        Clicar: Administration console
+        Logar: Username / Password -> Sign In
+        Clicar menu: Clients
+        Clicar: Create client
+        Preencher: Client type (OpenID Connect) / Client id (ex: nextjs) -> Next -> Next -> Save
+        Settings aba preencher: Valid redirect URIs (http://localhost:3000/\*) / Web origin (http://localhost:3000/\*) / Client authentication (On) -> Save
+        Clicar aba: Credentials
+        Copiar: Client secret
+
+### NextAuth
+
+- link: https://next-auth.js.org/
+- with Keycloak link: https://next-auth.js.org/providers/keycloak
